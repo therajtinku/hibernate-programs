@@ -1,0 +1,8 @@
+<hibernate-mapping>
+	<class name="com.excelr.Employee" table="Employee">
+		<id name="e_id" column="e_id">
+			<generator class="assigned"/>
+		</id>
+		
+	</class>
+</hibernate-mapping>

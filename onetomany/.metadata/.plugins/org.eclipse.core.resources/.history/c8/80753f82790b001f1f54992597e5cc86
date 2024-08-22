@@ -1,0 +1,31 @@
+package com.excelr;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import antlr.collections.List;
+
+public class SaveQuestions {
+
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = new Configuration().configure("hibernate.config.xml").buildSessionFactory();
+		Session openSession = sessionFactory.openSession();
+		Transaction beginTransaction = openSession.beginTransaction();
+		
+		Answers answers1 = new Answers();
+		answers1.setQanswer("java framework");
+		answers1.setPostedBy("Excelr");
+		
+		Answers answers2 = new Answers();
+		answers2.setQanswer("ORM Tool");
+		answers2.setPostedBy("Excelr");
+		
+		List list1 = new ArrayList<Answers>();
+		list1.add(answers1);
+		list1.add(answers2);
+
+	}
+
+}

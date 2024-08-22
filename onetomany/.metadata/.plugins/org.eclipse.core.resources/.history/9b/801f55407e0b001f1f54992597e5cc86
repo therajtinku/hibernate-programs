@@ -1,0 +1,19 @@
+package com.excelr;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Students {
+	@Id
+	@GeneratedValue
+	private int sno;
+	private String sname;
+	private String scourse;
+	@ManyToOne(cascade = CascadeType.ALL);
+	private Address address;
+
+}

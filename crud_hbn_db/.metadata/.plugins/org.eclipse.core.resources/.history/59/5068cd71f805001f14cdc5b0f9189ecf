@@ -1,0 +1,14 @@
+package com.excelr;
+
+import org.hibernate.cfg.Configuration;
+
+public class RecordSingleRecordAndDelete {
+
+	public static void main(String[] args) {
+		//step 1 load hibernate.config.xml file
+		Configuration configuration = new Configuration();
+		configuration.configure("hibernate.config.xml");
+
+	}
+
+}

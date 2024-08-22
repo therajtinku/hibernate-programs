@@ -1,0 +1,10 @@
+package com.excelr;
+
+public class Students {
+	private int sno;
+	private String sname;
+	private String scourse;
+	
+	private Address address;
+
+}

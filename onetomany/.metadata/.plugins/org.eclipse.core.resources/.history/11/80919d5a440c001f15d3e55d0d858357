@@ -1,0 +1,30 @@
+package com.excelr;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class SaveQuestions1 {
+
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = new Configuration().configure("hibernate.config.xml").buildSessionFactory();
+		Session openSession = sessionFactory.openSession();
+		Transaction beginTransaction = openSession.beginTransaction();
+		
+		Answer1 answer11 = new Answer1();
+		answer11.setQanswer("Hibernate is a Java Framework");
+		answer11.setPostedBy("ExcelR");
+		
+		
+		openSession.persist();
+		openSession.persist();
+		openSession.persist();
+		beginTransaction.commit();
+		openSession.close();
+		sessionFactory.close();
+		System.out.println("success");
+
+	}
+
+}

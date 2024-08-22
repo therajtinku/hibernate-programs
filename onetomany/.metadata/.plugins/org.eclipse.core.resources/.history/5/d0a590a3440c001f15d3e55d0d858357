@@ -1,0 +1,45 @@
+package com.excelr;
+
+import java.util.ArrayList;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class SaveQuestions1 {
+
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = new Configuration().configure("hibernate.config.xml").buildSessionFactory();
+		Session openSession = sessionFactory.openSession();
+		Transaction beginTransaction = openSession.beginTransaction();
+		
+		Answer1 answer11 = new Answer1();
+		answer11.setQanswer("Hibernate is a Java Framework");
+		answer11.setPostedBy("ExcelR");
+		
+		Answer1 answer12 = new Answer1();
+		answer12.setQanswer("Hibernate is ORM Tool");
+		answer12.setPostedBy("ExcelR");
+		
+		Answer1 answer13 = new Answer1();
+		answer13.setQanswer("Hibernate also supports Annotations");
+		answer13.setPostedBy("ExcelR");
+		
+		ArrayList<Answer1> arrayList1 = new ArrayList<Answer1>();
+		arrayList1.add(answer11);
+		arrayList1.add(answer12);
+		arrayList1.add(answer13);
+		
+		
+		openSession.persist();
+		openSession.persist();
+		openSession.persist();
+		beginTransaction.commit();
+		openSession.close();
+		sessionFactory.close();
+		System.out.println("success");
+
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.excelr;
+
+import javax.persistence.*;
+
+@Entity
+public class Question {
+	@Id
+	
+	private int id;
+	private String qname;
+	private List<Answers> answers;
+
+}

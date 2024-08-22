@@ -1,0 +1,16 @@
+package com.excelr;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Product {
+	@Id
+	private int p_id;
+	private String p_name;
+	private double p_cost;
+	private String p_image;
+	
+	
+
+}

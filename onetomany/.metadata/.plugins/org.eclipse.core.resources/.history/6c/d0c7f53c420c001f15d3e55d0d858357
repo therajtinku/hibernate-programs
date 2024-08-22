@@ -1,0 +1,10 @@
+package com.excelr;
+
+import java.util.List;
+
+public class Question1 {
+	private int id;
+	private String qname;
+	private List<Answer1> answers;
+
+}

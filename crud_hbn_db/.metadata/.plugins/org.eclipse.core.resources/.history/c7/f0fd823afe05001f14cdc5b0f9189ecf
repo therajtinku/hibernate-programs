@@ -1,0 +1,21 @@
+package com.excelr;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class InsertProduct {
+
+	public static void main(String[] args) {
+		Session openSession = new Configuration().configure("hibernate.config.xml").buildSessionFactory().openSession();
+		Transaction beginTransaction = openSession.beginTransaction();
+		Product p1 = new Product();
+		p1.setP_id(101);
+		p1.setP_name("Mobile1");
+		p1.setP_cost(10000);
+		p1.setP_image("https://excelrfsd.s3.eu-north-1.amazonaws.com/mobile11.jpeg");
+		openSession.save(p1);
+
+	}
+
+}
